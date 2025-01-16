@@ -41,6 +41,9 @@ assert(xpcall(function()
 		},
 	}
 
+  modem.open(INIT_PORT)
+  modem.open(com_port)
+
   while true do
     local event, receiverAddress, senderAddress, port, dist, msg = computer.pullSignal()
     if event == "modem_message" and type(msg) == "string" then
