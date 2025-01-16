@@ -1,6 +1,6 @@
 assert(xpcall(function()
 
-  local component = requre('component')
+  local component = require('component')
   local function getComponent(name)
     local address = component.list(name)()
     return address and component.proxy(address)
