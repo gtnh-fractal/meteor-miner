@@ -9,6 +9,7 @@ assert(xpcall(function()
   local geolizer = getComponent('geolizer')
   local modem = getComponent('modem')
   local eeprom = getComponent('eeprom')
+  local computer = getComponent('computer')
 
   local INIT_PORT = 1
   local com_port = 2
