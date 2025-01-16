@@ -1,15 +1,13 @@
 assert(xpcall(function()
 
-  local component = require('component')
   local function getComponent(name)
     local address = component.list(name)()
     return address and component.proxy(address)
   end
   
-  local geolizer = getComponent('geolizer')
+  local geolyzer = getComponent('geolyzer')
   local modem = getComponent('modem')
   local eeprom = getComponent('eeprom')
-  local computer = getComponent('computer')
 
   local INIT_PORT = 1
   local com_port = 2
@@ -37,7 +35,7 @@ assert(xpcall(function()
     },
     [com_port] = {
       scan = function(...)
-        local result = geolizer.scan(...)
+        local result = geolyzer.scan(...)
         return dump(result)
       end, 
     },
